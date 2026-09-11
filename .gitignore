@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+.ipynb_checkpoints/
+models/*.pt
+sample_data/outputs/
+streamlit_cache/
+*.log

@@ -1,0 +1,12 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+.DS_Store
+.env
+*.log
+sample_data/
+utils/__pycache__/
+components/__pycache__/
