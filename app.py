@@ -453,7 +453,19 @@ with tab2:
 
     with col_stream:
         st.markdown("#### 🎥 Live Road Dashcam HUD")
-        sample_img_idx = 0 if (precaution_info and precaution_info.get("active")) else 3
+        
+        # Dynamically pick road image corresponding to the selected location and hazard severity
+        loc_lower = location_title.lower()
+        if precaution_info and precaution_info.get("active"):
+            if "koramangala" in loc_lower or "sony" in loc_lower:
+                sample_img_idx = 1  # koramangala_pothole_1.jpg
+            elif "whitefield" in loc_lower or "hoodi" in loc_lower or "itpl" in loc_lower:
+                sample_img_idx = 2  # whitefield_road_defect.jpg
+            else:
+                sample_img_idx = 0  # bengaluru_orr_severe.jpg
+        else:
+            sample_img_idx = 3  # clean_road_sample.jpg
+
         img_path = st.session_state["sample_images"][sample_img_idx]
         frame_bgr = cv2.imread(img_path)
 
